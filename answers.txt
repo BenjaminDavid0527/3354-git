@@ -1,0 +1,29 @@
+# Benjamin Price
+# bxp130230@utdallas.edu
+(a) How many commits exist in the repository history after completing step 8
+(Including commits made by the original author)?
+
+There are 7 commits after completing step 8.
+
+(b) When was the file .gitignore added?
+
+The .gitignore file was added January 24, 2017. It was the 4th commit.
+
+(c) What is the difference between git log and git status?
+
+"git log" shows the commit history starting from the current commit, while "git status" shows the status of the current commit (changes made since the last commit)
+
+(d) What is the difference between unstaged and untracked files?
+
+Unstaged files are files that have been added, removed, or edited since the last commit which have not been "staged", or added to the list of files to be updated in the next commit.
+
+Untracked files are files in the local repository that are not being tracked by git, so they will not be included in any commits and are not seen by any others who access the git repository.
+
+(e) What is the difference between git checkout and git reset?
+
+"git checkout" allows us to move to other branches in the git repository, which is useful for making changes to our code without affecting the main codebase. This allows us to switch from the current, implemented code with experimental, updated code easily.
+"git reset" clears our staging area to the current commit, or if supplied a commit, clears the staging area and moves to that commit. This completely clears any changes you've made and, if you've supplied a commit as an argument, clears the commit you were on from the history. This is dangerous and generally not good practice. Using "git revert" is a safer option for this.
+
+(f) What happens if you try to pull remote changes when there are uncommitted changes in your working directory?
+
+If you attempt to pull remote changes when you still have uncommitted changes in the working directory, git will return an error if those changes are to files that the remote also changed (but will succeed otherwise). Instead, you must update your local working directory to the remote directory. It's safest to first commit your changes and then manage the conflicts on a case-by-case basis. You can also use rebase, which will move your local changes to just be a sequential step after the remote changes.
