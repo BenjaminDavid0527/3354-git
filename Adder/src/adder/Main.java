@@ -16,7 +16,16 @@ public class Main {
     private static int addArguments(String[] args) throws Exception {
 		if (args.length == 0) throw new Exception();
 		int sum = 0;
-		for (String arg : args) sum += Integer.valueOf(arg);
+		if (args[0].compareTo("-") == 0) {
+			int t = 0;
+			for (int i = 1; i < args.length; i++) {
+				t = Integer.valueOf(args[i]);
+				sum += (t < 0) ? t : -t;
+			}
+		}
+		else {
+			for (String arg : args) sum += Integer.valueOf(arg);
+		}
         return sum;
     }
 }
