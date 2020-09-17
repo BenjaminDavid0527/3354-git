@@ -6,8 +6,10 @@ public class Main {
         try {
             int result = addArguments(args);
             System.out.println(result);
+		} catch (IllegalArgumentException e) {
+			System.err.println("Please only enter integers.");
         } catch (Exception e) {
-            System.err.println("Please enter a series of Integers to add.");
+            System.err.println("Please enter 1 or more arguments.");
         }
     }
 
